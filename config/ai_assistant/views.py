@@ -22,7 +22,7 @@ def api_chat(request):
                 return JsonResponse({'error': 'Prompt cannot be empty'}, status=400)
 
             # Using Gemini 2.5/3.5 Flash model
-            model = genai.GenerativeModel('gemini-2.5-flash') # or 'gemini-1.5-flash' depending on available tier
+            model = genai.GenerativeModel('gemini-3.8-flash') # or 'gemini-1.5-flash' depending on available tier
             response = model.generate_content(user_prompt)
 
             return JsonResponse({'response': response.text})
