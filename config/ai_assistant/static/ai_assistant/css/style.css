@@ -1,0 +1,10 @@
+body {
+    font-family: system-ui, -apple-system, sans-serif;
+}
+.chat-container {
+    background-color: #fdfdfd;
+}
+.suggestion-btn {
+    font-size: 0.8rem;
+    border-radius: 20px;
+}

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Assistant - Class Helper</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'ai_assistant/css/style.css' %}">
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="{% static 'ai_assistant/manifest.json' %}">
+    <meta name="theme-color" content="#ffffff">
+</head>
+<body class="bg-light">
+
+    <!-- Offline Notification Banner -->
+    <div id="offline-banner" class="alert alert-warning text-center m-0 py-1 d-none" role="alert">
+        ⚠️ You are currently offline. Safe Student Mode active.
+    </div>
+
+    <div class="container py-4" style="max-width: 600px;">
+        <div class="card shadow-sm border rounded-4">
+            <!-- Header -->
+            <div class="card-header bg-white border-bottom d-flex justify-content-between align-items-center py-3">
+                <div class="d-flex align-items-center">
+                    <span class="fs-4 me-2">🎓</span>
+                    <h5 class="mb-0 fw-bold">AI ASSISTANT</h5>
+                </div>
+                <div>
+                    <button class="btn btn-outline-secondary btn-sm me-1" title="Device Mode">📱</button>
+                    <button class="btn btn-outline-secondary btn-sm" title="Info">ℹ️</button>
+                </div>
+            </div>
+
+            <!-- Chat Body / Messages Area -->
+            <div class="card-body chat-container p-3" id="chat-stream" style="height: 450px; overflow-y: auto;">
+                <div class="text-muted small mb-2">CLASS ASSISTANT • Lesson helper</div>
+                
+                <!-- Initial Assistant Greeting Bubble -->
+                <div class="p-3 border rounded-3 bg-white mb-3 shadow-sm">
+                    Hi Maya! Ready to explore today's science prompt? You can ask me any question about photosynthesis, cells, or plant life cycles to help with your worksheet.
+                </div>
+
+                <!-- Dynamic Conversation Appends Here -->
+            </div>
+
+            <!-- Suggestion Pills -->
+            <div class="px-3 pb-2 d-flex gap-2 overflow-auto">
+                <button class="btn btn-outline-dark btn-sm suggestion-btn text-nowrap">Why are leaves green?</button>
+                <button class="btn btn-outline-dark btn-sm suggestion-btn text-nowrap">Give me an example</button>
+                <button class="btn btn-outline-dark btn-sm suggestion-btn text-nowrap">Check my work</button>
+            </div>
+
+            <!-- Input Footer -->
+            <div class="card-footer bg-white border-top p-3">
+                <div class="mb-2 text-muted small">Ask a question for class...</div>
+                <div class="input-group mb-2">
+                    <textarea id="user-prompt" class="form-control border-dark" rows="2" placeholder="Type your question here..."></textarea>
+                </div>
+                <div class="d-flex justify-content-between align-items-center">
+                    <button id="clear-btn" class="btn btn-outline-dark btn-sm px-3">✕ Clear</button>
+                    <button id="send-btn" class="btn btn-dark btn-sm px-4">➤ Send</button>
+                </div>
+                <div class="text-center text-muted mt-2" style="font-size: 0.75rem;">
+                    🔒 Safe Student Mode • Offline PWA
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript logic & PWA registration -->
+    <script src="{% static 'ai_assistant/js/app.js' %}"></script>
+</body>
+</html>
